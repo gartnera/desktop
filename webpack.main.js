@@ -17,6 +17,10 @@ const common = {
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/,
             },
+            {
+                test: /\.node$/,
+                use: 'node-loader'
+            }
         ],
     },
     plugins: [],

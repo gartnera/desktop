@@ -23,6 +23,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
+import * as robot from 'robotjs';
+
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
@@ -248,6 +250,12 @@ export class VaultComponent implements OnInit, OnDestroy {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
                         click: () => this.copyValue(cipher.login.password, 'password'),
+                    }));
+                }
+                if (cipher.login.password != null) {
+                    menu.append(new remote.MenuItem({
+                        label: 'Autotype',
+                        click: () => this.doAutotype(cipher.login.username, cipher.login.password),
                     }));
                 }
                 break;
@@ -536,6 +544,15 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
         });
+    }
+
+    private doAutotype(username: string, password: string) {
+        robot.setKeyboardDelay(500);
+        robot.keyTap('tab', 'alt')
+        robot.typeString(username); 
+        robot.keyTap('tab'); 
+        robot.typeString(password); 
+        robot.keyTap('enter')
     }
 
     private functionWithChangeDetection(func: Function) {

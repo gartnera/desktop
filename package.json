@@ -255,6 +255,7 @@
     "node-forge": "0.7.6",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
+    "robotjs": "^0.5.1",
     "rxjs": "6.3.2",
     "zone.js": "0.8.26"
   }

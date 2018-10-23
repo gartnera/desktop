@@ -34,6 +34,10 @@ const common = {
                     },
                 }],
             },
+            {
+                test: /\.node$/,
+                use: 'node-loader'
+            },
         ],
     },
     plugins: [],
