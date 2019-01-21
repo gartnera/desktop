@@ -27,6 +27,10 @@
         .inner-content {
             padding-bottom: 0;
             padding-right: 5px;
+
+            > ul {
+                margin: 0 0 15px 0;
+            }
         }
 
         h2 {
@@ -71,23 +75,123 @@
                 word-break: break-all;
 
                 .fa-li {
-                    left: -11px;
                     top: 8px;
+                    width: 1.1em;
                 }
+            }
+        }
 
-                a {
+        // Nested indentions
+        ul.fa-ul {
+            // Level 1
+            li {
+                > a {
                     padding-left: 12px;
                 }
 
-                &.active .fa-li {
-                    left: 4px;
+                .fa-li {
+                    left: -4px;
+                }
+
+                &.active > a .fa-li {
+                    left: 11px;
+                }
+            }
+
+            // Level 2
+            ul li { 
+                > a {
+                    padding-left: 23px;
+                }
+
+                .fa-li {
+                    left: 7px;
+                }
+
+                &.active > a .fa-li {
+                    left: 22px;
+                }
+            }
+
+            // Level 3
+            ul ul li { 
+                > a {
+                    padding-left: 34px;
+                }
+
+                .fa-li {
+                    left: 18px;
+                }
+
+                &.active > a .fa-li {
+                    left: 33px;
+                }
+            }
+
+            // Level 4
+            ul ul ul li { 
+                > a {
+                    padding-left: 45px;
+                }
+
+                .fa-li {
+                    left: 29px;
+                }
+
+                &.active > a .fa-li {
+                    left: 44px;
+                }
+            }
+
+            // Level 5
+            ul ul ul ul li { 
+                > a {
+                    padding-left: 56px;
+                }
+
+                .fa-li {
+                    left: 40px;
+                }
+
+                &.active > a .fa-li {
+                    left: 55px;
+                }
+            }
+
+            // Level 6
+            ul ul ul ul ul li { 
+                > a {
+                    padding-left: 67px;
+                }
+
+                .fa-li {
+                    left: 51px;
+                }
+
+                &.active > a .fa-li {
+                    left: 66px;
+                }
+            }
+
+            // Level 7
+            ul ul ul ul ul ul li { 
+                > a {
+                    padding-left: 78px;
+                }
+
+                .fa-li {
+                    left: 62px;
+                }
+
+                &.active > a .fa-li {
+                    left: 77px;
                 }
             }
         }
 
         ul {
             padding: 0;
-            margin: 0 0 15px 0;
+            margin: 0;
 
             li {
                 a {
@@ -129,6 +233,17 @@
 
                     @include themify($themes) {
                         background-color: themed('groupingsActiveColor');
+                    }
+
+                    ul {
+                        @include themify($themes) {
+                            background-color: themed('backgroundColorAlt');
+                        }
+
+                        margin-left: -15px;
+                        margin-right: -5px;
+                        padding-left: 15px;
+                        padding-right: 5px;
                     }
                 }
             }

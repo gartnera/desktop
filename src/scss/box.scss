@@ -56,6 +56,11 @@
 
             &:first-child, &:last-child {
                 border-radius: $border-radius;
+
+                .progress {
+                    border-bottom-left-radius: $border-radius;
+                    border-bottom-right-radius: $border-radius;
+                }
             }
 
             &:last-child {
@@ -91,6 +96,10 @@
                 @include themify($themes) {
                     color: themed('mutedColor');
                 }
+
+                .sub-label {
+                    margin-left: 10px;
+                }
             }
 
             .text, .detail {
@@ -118,7 +127,7 @@
                 flex-grow: 1;
             }
 
-            &.box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
+            &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
             &.box-content-row-slider, &.box-content-row-multi {
                 display: flex;
                 align-items: center;
@@ -181,24 +190,31 @@
             &.box-content-row-input {
                 label {
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
                 input {
                     text-align: right;
+                    width: 45px !important;
                 }
             }
 
             &.box-content-row-slider {
                 input[type="range"] {
                     height: 10px;
+                    width: 110px !important;
                 }
 
                 input[type="number"] {
-                    width: 45px;
+                    text-align: right;
+                    width: 45px !important;
                 }
 
                 label {
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
 
@@ -288,6 +304,21 @@
                 
                 @include themify($themes) {
                     color: themed('mutedColor');
+                }
+            }
+
+            .progress {
+                display: flex;
+                height: 5px;
+                overflow: hidden;
+                margin: 5px -15px -10px;
+
+                .progress-bar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    white-space: nowrap;
+                    background-color: $brand-primary;
                 }
             }
         }

@@ -4,6 +4,36 @@ small {
     font-size: $font-size-small;
 }
 
+.bg-primary {
+    @include themify($themes) {
+        background-color: themed('primaryColor') !important;
+    }
+}
+
+.bg-success {
+    @include themify($themes) {
+        background-color: themed('successColor') !important;
+    }
+}
+
+.bg-danger {
+    @include themify($themes) {
+        background-color: themed('dangerColor') !important;
+    }
+}
+
+.bg-info {
+    @include themify($themes) {
+        background-color: themed('infoColor') !important;
+    }
+}
+
+.bg-warning {
+    @include themify($themes) {
+        background-color: themed('warningColor') !important;
+    }
+}
+
 .text-primary {
     @include themify($themes) {
         color: themed('primaryColor') !important;
@@ -13,6 +43,18 @@ small {
 .text-success {
     @include themify($themes) {
         color: themed('successColor') !important;
+    }
+}
+
+.text-danger {
+    @include themify($themes) {
+        color: themed('dangerColor') !important;
+    }
+}
+
+.text-warning {
+    @include themify($themes) {
+        color: themed('warningColor') !important;
     }
 }
 
@@ -46,12 +88,12 @@ p.lead {
     font-weight: normal;
 }
 
-[hidden] {
-    display: none !important;
-}
-
 .monospaced {
     font-family: $font-family-monospace;
+}
+
+.show-whitespace {
+    white-space: pre-wrap;
 }
 
 .sr-only {
@@ -128,16 +170,37 @@ p.lead {
 
 .password-block {
     font-size: $font-size-large;
-    word-break: break-all;
     font-family: $font-family-monospace;
-    min-height: 60px;
+    min-height: 50px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
 
     .modal-body & {
         margin-top: 10px;
+    }
+}
+
+.password-wrapper {
+    display: flex !important;
+    flex-wrap: wrap;
+
+    span {
+        white-space: pre;
+    }
+}
+
+.password-number {
+    @include themify($themes) {
+        color: themed('passwordNumberColor');
+    }
+}
+
+.password-special {
+    @include themify($themes) {
+        color: themed('passwordSpecialColor');
     }
 }
 
@@ -221,4 +284,8 @@ app-root > #loading {
     @include themify($themes) {
         content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
     }
+}
+
+[hidden] {
+    display: none !important;
 }

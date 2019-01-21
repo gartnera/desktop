@@ -24,12 +24,16 @@
     <app-vault-add-edit id="details"
                         *ngIf="action === 'add' || action === 'edit'"
                         [folderId]="action === 'add' && folderId !== 'none' ? folderId : null"
+                        [organizationId]="action === 'add' ? addOrganizationId : null"
+                        [collectionIds]="action === 'add' ? addCollectionIds : null"
                         [type]="action === 'add' ? (addType ? addType : type) : null"
                         [cipherId]="action === 'edit' ? cipherId : null"
                         (onSavedCipher)="savedCipher($event)"
                         (onDeletedCipher)="deletedCipher($event)"
                         (onEditAttachments)="editCipherAttachments($event)"
                         (onCancelled)="cancelledAddEdit($event)"
+                        (onShareCipher)="shareCipher($event)"
+                        (onEditCollections)="cipherCollections($event)"
                         (onGeneratePassword)="openPasswordGenerator(true)">
     </app-vault-add-edit>
     <div id="logo" *ngIf="action !== 'add' && action !== 'edit' && action !== 'view'">
@@ -41,6 +45,8 @@
     </div>
     <ng-template #passwordGenerator></ng-template>
     <ng-template #attachments></ng-template>
+    <ng-template #collections></ng-template>
+    <ng-template #share></ng-template>
     <ng-template #folderAddEdit></ng-template>
     <ng-template #passwordHistory></ng-template>
     <ng-template #exportVault></ng-template>

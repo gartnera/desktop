@@ -37,26 +37,31 @@ import { StopClickDirective } from 'jslib/angular/directives/stop-click.directiv
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
 
+import { ColorPasswordPipe } from 'jslib/angular/pipes/color-password.pipe';
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
+import { CollectionsComponent } from './vault/collections.component';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
+import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeBg from '@angular/common/locales/bg';
+import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
+import localEnGb from '@angular/common/locales/en-GB';
 import localeEs from '@angular/common/locales/es';
 import localeEt from '@angular/common/locales/et';
 import localeFa from '@angular/common/locales/fa';
@@ -85,9 +90,11 @@ import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
+registerLocaleData(localEnGb, 'en-GB');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEt, 'et');
 registerLocaleData(localeFa, 'fa');
@@ -138,6 +145,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CiphersComponent,
+        CollectionsComponent,
+        ColorPasswordPipe,
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
@@ -156,6 +165,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SettingsComponent,
+        ShareComponent,
         StopClickDirective,
         StopPropDirective,
         TrueFalseValueDirective,
@@ -166,6 +176,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     ],
     entryComponents: [
         AttachmentsComponent,
+        CollectionsComponent,
         EnvironmentComponent,
         ExportComponent,
         FolderAddEditComponent,
@@ -175,6 +186,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordHistoryComponent,
         PremiumComponent,
         SettingsComponent,
+        ShareComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],

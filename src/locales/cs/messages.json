@@ -38,6 +38,18 @@
   "shared": {
     "message": "Sdílené"
   },
+  "share": {
+    "message": "Sdílet"
+  },
+  "shareItem": {
+    "message": "Sdílet položku"
+  },
+  "sharedItem": {
+    "message": "Položka byla sdílena"
+  },
+  "shareDesc": {
+    "message": "Vyberte organizaci se kterou chcete tuto položku sdílet. Sdílením přenese vlastnictví položky na organizaci a již nadále nebudete přímým vlastníkem."
+  },
   "attachments": {
     "message": "Přílohy"
   },
@@ -70,7 +82,7 @@
     "message": "Heslo"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Heslová fráze"
   },
   "editItem": {
     "message": "Upravit položku"
@@ -99,6 +111,10 @@
   },
   "toggleVisibility": {
     "message": "Přepnout viditelnost"
+  },
+  "toggleCollapse": {
+    "message": "Přepnout sbalení",
+    "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -343,10 +359,10 @@
     "message": "Délka"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Počet slov"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Oddělovač slov"
   },
   "close": {
     "message": "Zavřít"
@@ -384,7 +400,7 @@
     "message": "Opravdu chcete tuto přílohu smazat?"
   },
   "attachmentSaved": {
-    "message": "Příloha byla uložena"
+    "message": "Příloha byla uložena."
   },
   "file": {
     "message": "Soubor"
@@ -450,7 +466,7 @@
     "message": "Zadejte e-mailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
   "getMasterPasswordHint": {
-    "message": "Získat nápovědu pro hlavní heslo"
+    "message": "Zaslat nápovědu k hlavnímu heslu"
   },
   "emailRequired": {
     "message": "E-mailová adresa je povinná."
@@ -516,7 +532,7 @@
     "message": "Pamatuj si mě"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Zaslat znovu ověřovací kód na e-mail"
+    "message": "Znovu zaslat ověřovací kód na e-mail"
   },
   "useAnotherTwoStepMethod": {
     "message": "Použít jinou metodu dvoufázového přihlášení"
@@ -612,7 +628,7 @@
     "message": "URL adresy vlastního prostředí byly uloženy"
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
     "message": "Ano"
@@ -689,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "changeEmail": {
-    "message": "Změnit e-mail"
+  "fingerprintPhrase": {
+    "message": "Fráze otisku prstu",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "E-mailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "yourAccountsFingerprint": {
+    "message": "Fráze otisku prstu vašeho účtu",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "Otevřít webovou aplikaci"
@@ -716,6 +734,15 @@
   "unlock": {
     "message": "Odemknout"
   },
+  "loggedInAs": {
+    "message": "Přihlášen jako $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Chybné hlavní heslo"
   },
@@ -729,7 +756,7 @@
     "message": "Možnosti zamknutí"
   },
   "lockOptionsDesc": {
-    "message": "Vyberte kdy dojde k automatickému uzamčení trezoru. Pro opětovný přístup do uzamčeného trezoru bude potřeba znovu zadat hlavního heslo."
+    "message": "Vyberte kdy dojde k automatickému uzamčení trezoru. Pro opětovný přístup do trezoru bude potřeba znovu zadat hlavního heslo."
   },
   "immediately": {
     "message": "Okamžitě"
@@ -770,12 +797,6 @@
   "security": {
     "message": "Zabezpečení"
   },
-  "disableGa": {
-    "message": "Zakázat analytiku"
-  },
-  "gaDesc": {
-    "message": "Analytiku používáme ke sběru informací o používání aplikace, abychom jí mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
-  },
   "disableFavicon": {
     "message": "Zakázat ikonky webových stránek"
   },
@@ -787,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Při minimalizaci okna, zobrazit ikonu na hlavním panelu systému."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Povolit ikonu v systémové liště"
@@ -893,10 +920,13 @@
     "message": "Přihlaste se k prémiovému členství a získejte:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB šifrovaného uložiště."
+    "message": "1 GB šifrovaného uložiště pro přílohy."
   },
   "premiumSignUpTwoStep": {
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Reporty o hygieně vašich hesel, zdraví účtu a narušeních bezpečnosti."
   },
   "premiumSignUpTotp": {
     "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
@@ -1091,14 +1121,47 @@
   "exportVault": {
     "message": "Exportovat trezor"
   },
+  "fileFormat": {
+    "message": "Formát souboru"
+  },
   "warning": {
     "message": "VAROVÁNÍ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Soubor exportu obsahuje nezašifrovaná data ve formátu .csv. Neměli byste ho ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
+  "exportWarningDesc": {
+    "message": "Tento export obsahuje data vašeho trezoru v nezašifrovaném formátu. Soubor exportu byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Odstraňte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
+  },
+  "noOrganizationsList": {
+    "message": "Nepatříte do žádné organizace. Organizace umožňují bezpečné sdílení položek s ostatními uživateli."
+  },
+  "noCollectionsInList": {
+    "message": "Žádné kolekce k zobrazení."
+  },
+  "ownership": {
+    "message": "Vlastnictví"
+  },
+  "whoOwnsThisItem": {
+    "message": "Kdo vlastní tuto položku?"
+  },
+  "strong": {
+    "message": "Silné",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Dobré",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Slabé",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Slabé hlavní heslo"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "Hlavní heslo, které jste si vybrali, je slabé. Pro správnou ochranu účtu Bitwarden byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
   }
 }
